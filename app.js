@@ -12,8 +12,8 @@ async function boot() {
   showLoading();
   try {
     const [cfgRes, csvRes] = await Promise.all([
-      fetch('config.json?v=1'),
-      fetch('items.csv?v=1'),
+      fetch('config.json'),
+      fetch('items.csv'),
     ]);
 
     if (!cfgRes.ok) throw new Error('Não foi possível carregar config.json');
