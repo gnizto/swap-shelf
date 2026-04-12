@@ -1,17 +1,16 @@
 id,nome,descricao,preco,preco_minimo,preco_novo,vendedor,emoji,status,caracteristicas,fotos
-1,Fruteira,,80,55,220,Cida,🍎,disponivel,,
+1,Fruteira,Sem as Frutas 😜,80,55,220,Cida,🍎,disponivel,3 prateleiras,./photos/fruteira_1.jpeg
 2,Mesa + 4 Cadeiras,,400,340,560,Cida,🪑,disponivel,,
-3,Microondas,,740,700,1234,Cida,♨️,disponivel,31 Litros,
-4,Tanquinho,Colormaq,330,300,550,Cida,🧼,disponivel,16 kg,
-5,Geladeira,,600,550,10,Cida,🧊,disponivel,,
-6,Air-Fryer,,200,100,477,Cida,🍟,disponivel,,
-7,Paneleiro + Aéro Itatiaia (3),,600,550,976,Cida,📦,disponivel,,
-8,Fogão,,450,400,900,Cida,🔥,disponivel,,
-9,3 Cadeira de Praia,,120,120,270,Cida,⛱️,disponivel,,
+3,Microondas,,740,700,1234,Cida,♨️,disponivel,31 Litros|Interior de Inox,./photos/microondas_1.jpeg|./photos/microondas_2.jpeg
+4,Tanquinho,Colormaq,330,300,550,Cida,🧼,disponivel,220V|16 kg,
+5,Geladeira,Electrolux,600,550,10,Cida,🧊,disponivel,127V|430L|Frost Free,./photos/geladeira_1.jpeg
+6,Air-Fryer,Marca: Mondial | Modelo: Grand Family Inox,200,100,477,Cida,🍟,disponivel,"127V|5,5L",./photos/airfryer_1.jpeg|./photos/airfryer_2.jpeg
+8,Fogão 6 Bocas,Marca: Brastemp | Modelo: Quality,450,400,900,Cida,🔥,disponivel,127V|6 Bocas,./photos/fogao_1.jpeg|./photos/fogao_2.jpeg
+9,3 Cadeira de Praia,3 Unidades,120,120,270,Cida,⛱️,disponivel,,
 10,Colchão Casal + Box Bipartido,,750,500,1016,Cida,🛏️,disponivel,,
 11,Colchão Solterio + Base box + Cabeceira,,700,600,1160,Cida,🛏️,disponivel,,
-12,Paneleiro + Aéro Itatiaia (2),,500,450,800,Cida,📦,disponivel,,
-13,Máquina de Costura,,400,350,600,Cida,🪡,disponivel,,
-14,Impressora HP Series 584,,600,500,900,Cida,🖨️,disponivel,,
-15,Caixa Térmica Coleman,,160,150,270,Cida,🧰,disponivel,,
-16,XBOX Series X,,3800,3800,5300,Gabriel,🎮,vendido,,
+12,Paneleiro + Aéro,Marca: Itatiaia | Paneleiro 6 portas e Armário Aéreo 2 portas,500,450,800,Cida,📦,disponivel,,./photos/itatiaia_1.jpeg|./photos/itatiaia_2.jpeg
+13,Máquina de Costura,Marca: Singer | Modelo: 4218 Inspiration,400,350,600,Cida,🪡,disponivel,127V,./photos/maquina_costura_1.jpeg
+14,Impressora HP Series 584,,600,500,900,Cida,🖨️,disponivel,Tank,
+15,Caixa Térmica Coleman 45L,,160,150,270,Cida,🧰,disponivel,,./photos/coleman_1.jpeg|./photos/coleman_2.jpeg
+16,XBOX Series X,,3800,3800,5300,Gabriel,🎮,vendido,,./photos/xbox_series_x.jpeg
