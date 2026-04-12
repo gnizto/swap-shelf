@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="logo" id="logo">Catálogo</div>
+    <div class="hdr-right">
+      <button class="btn btn-outline-w btn-sm" onclick="openProposal()">📄 Proposta</button>
+      <button class="btn btn-outline-w btn-sm cart-btn" onclick="openCart()">
+        🛒 Carrinho
+        <span class="cart-count hidden" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ══ HERO ══ -->
+  <div class="hero">
+    <div class="hero-inner">
+      <h1 id="hero-title"></h1>
+      <p id="hero-sub"></p>
+      <div class="promo-tags" id="promo-tags"></div>
+    </div>
+  </div>
+
+  <!-- ══ FILTERS ══ -->
+  <div class="filters">
+    <input  type="text" id="f-search" placeholder="🔍 Buscar item ou vendedor…" oninput="renderCatalog()">
+    <select id="f-status" onchange="renderCatalog()">
+      <option value="all">Todos os status</option>
+      <option value="disponivel">Disponíveis</option>
+      <option value="reservado">Reservados</option>
+      <option value="vendido">Vendidos</option>
+    </select>
+    <select id="f-vendor" onchange="renderCatalog()">
+      <option value="all">Todos os vendedores</option>
+    </select>
+  </div>
+
+  <!-- ══ CATALOG ══ -->
+  <div class="catalog-grid" id="catalog-grid">
+    <!-- preenchido por app.js -->
+  </div>
+
+  <!-- ══ CART OVERLAY + DRAWER ══ -->
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-hdr">
+      <h3>🛒 Carrinho</h3>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer hidden" id="cart-footer">
+      <div id="cart-totals"></div>
+      <button id="btn-whatsapp" class="btn btn-primary btn-full hidden" onclick="sendWhatsapp()">
+        💬 Entrar em contato via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- ══ MODAL: ITEM DETAIL ══ -->
+  <div class="modal-overlay" id="modal-detail">
+    <div class="modal">
+      <div class="modal-hdr">
+        <h3 id="detail-title"></h3>
+        <button class="modal-close" onclick="closeModal('modal-detail')">✕</button>
+      </div>
+      <div class="modal-body" id="detail-body"></div>
+    </div>
+  </div>
+
+  <!-- ══ MODAL: PROPOSTA ══ -->
+  <div class="modal-overlay" id="modal-proposal">
+    <div class="modal">
+      <div class="modal-hdr">
+        <h3>📄 Gerar Proposta</h3>
+        <button class="modal-close" onclick="closeModal('modal-proposal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:.82rem;color:var(--mid);margin-bottom:1rem;line-height:1.5">
+          Selecione os itens, preencha o nome do cliente e clique em <strong>Gerar PDF</strong>.<br>
+          O PDF pode ser salvo e enviado por WhatsApp ou e-mail.
+        </p>
+
+        <div style="margin-bottom:.9rem">
+          <label style="font-size:.73rem;color:var(--mid);font-weight:500;display:block;margin-bottom:.3rem">Nome do cliente (opcional)</label>
+          <input type="text" id="proposal-client" placeholder="Ex: João Silva"
+            style="width:100%;padding:.48rem .75rem;border:1.5px solid #d0c8bc;border-radius:4px;background:var(--bg);font-size:.84rem;outline:none">
+        </div>
+
+        <div style="margin-bottom:.9rem">
+          <label style="font-size:.73rem;color:var(--mid);font-weight:500;display:block;margin-bottom:.3rem">Observação (opcional)</label>
+          <textarea id="proposal-note" placeholder="Ex: Proposta válida por 7 dias. Retirada em mãos."
+            style="width:100%;padding:.48rem .75rem;border:1.5px solid #d0c8bc;border-radius:4px;background:var(--bg);font-size:.84rem;outline:none;resize:vertical;min-height:60px"></textarea>
+        </div>
+
+        <div style="font-size:.73rem;color:var(--mid);font-weight:500;margin-bottom:.5rem">Itens disponíveis</div>
+        <div id="proposal-item-list" style="display:flex;flex-direction:column;gap:.4rem;max-height:280px;overflow-y:auto;margin-bottom:1rem"></div>
+
+        <div id="proposal-summary" style="display:none;background:var(--bg);border-radius:6px;padding:.75rem 1rem;font-size:.83rem;margin-bottom:1rem"></div>
+
+        <div style="display:flex;gap:.5rem;justify-content:flex-end">
+          <button class="btn btn-ghost" onclick="closeModal('modal-proposal')">Cancelar</button>
+          <button class="btn btn-primary" onclick="printProposal()">📄 Gerar PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PRINT AREA (invisible on screen, visible on print) ══ -->
+  <div id="print-area"></div>
+
+  <!-- ══ TOAST ══ -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
