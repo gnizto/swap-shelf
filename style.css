@@ -311,20 +311,87 @@ header {
 .modal-close { background: none; border: none; font-size: 1.3rem; cursor: pointer; color: var(--mid); flex-shrink: 0; }
 .modal-body  { padding: 1.2rem; }
 
-/* detail */
-.detail-photos {
-  display: flex; gap: .5rem; overflow-x: auto;
-  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
-  margin-bottom: 1.1rem; border-radius: 6px;
+/* detail gallery thumbnails */
+.detail-thumbs {
+  display: flex; gap: .5rem; margin-bottom: 1.1rem; flex-wrap: wrap;
 }
-.detail-photos::-webkit-scrollbar { display: none; }
-.detail-photo {
-  flex-shrink: 0; width: 100%; height: 210px;
-  scroll-snap-align: start; border-radius: 6px; overflow: hidden;
+.detail-thumb {
+  width: 80px; height: 80px; border-radius: 6px; overflow: hidden; cursor: pointer;
   background: linear-gradient(135deg, var(--warm), #d8cfc0);
-  display: flex; align-items: center; justify-content: center; font-size: 4rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; border: 2px solid transparent;
+  transition: border-color .15s, transform .15s; flex-shrink: 0;
 }
-.detail-photo img { width: 100%; height: 100%; object-fit: cover; }
+.detail-thumb:hover { transform: scale(1.05); border-color: var(--accent); }
+.detail-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.detail-thumb-emoji {
+  width: 100%; height: 200px; border-radius: 6px; overflow: hidden; cursor: default;
+  background: linear-gradient(135deg, var(--warm), #d8cfc0);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; margin-bottom: 1.1rem;
+}
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed; inset: 0; z-index: 900;
+  background: rgba(0,0,0,.93);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity .22s;
+}
+.lightbox.open { opacity: 1; pointer-events: all; }
+
+.lb-img-wrap {
+  position: relative;
+  max-width: min(92vw, 900px);
+  max-height: 85vh;
+  display: flex; align-items: center; justify-content: center;
+}
+.lb-img-wrap img {
+  max-width: 100%; max-height: 85vh;
+  object-fit: contain; border-radius: 4px;
+  user-select: none; display: block;
+}
+.lb-emoji {
+  font-size: 8rem; color: #fff; user-select: none;
+}
+
+.lb-close {
+  position: fixed; top: 1.2rem; right: 1.2rem;
+  background: rgba(255,255,255,.15); border: none; color: #fff;
+  width: 40px; height: 40px; border-radius: 50%; font-size: 1.2rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .15s; z-index: 901;
+}
+.lb-close:hover { background: rgba(255,255,255,.28); }
+
+.lb-arrow {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.15); border: none; color: #fff;
+  width: 44px; height: 44px; border-radius: 50%; font-size: 1.3rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .15s; z-index: 901;
+}
+.lb-arrow:hover { background: rgba(255,255,255,.28); }
+.lb-arrow.prev { left: 1rem; }
+.lb-arrow.next { right: 1rem; }
+.lb-arrow.hidden { opacity: 0; pointer-events: none; }
+
+.lb-counter {
+  position: fixed; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+  color: rgba(255,255,255,.6); font-size: .78rem; z-index: 901;
+  background: rgba(0,0,0,.4); padding: .25rem .7rem; border-radius: 20px;
+}
+
+.lb-dots {
+  position: fixed; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 6px; z-index: 901;
+}
+.lb-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,.35); cursor: pointer; transition: background .15s;
+}
+.lb-dot.active { background: #fff; }
 .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem 1rem; margin-bottom: .9rem; }
 .detail-field { display: flex; flex-direction: column; gap: .12rem; }
 .detail-field.full { grid-column: 1 / -1; }
@@ -369,22 +436,5 @@ header {
   .logo { font-size: 1.25rem; }
 }
 
-/* ── PRINT / PDF ── */
+/* ── PRINT AREA (kept minimal — proposal opens in new tab now) ── */
 #print-area { display: none; }
-
-@media print {
-  /* hide everything except the print area */
-  body > *:not(#print-area) { display: none !important; }
-  #print-area {
-    display: block !important;
-    position: fixed;
-    inset: 0;
-    background: white;
-    z-index: 9999;
-    padding: 0;
-  }
-  @page {
-    size: A4;
-    margin: 1.5cm 1.8cm;
-  }
-}

@@ -114,12 +114,21 @@
     </div>
   </div>
 
-  <!-- ══ PRINT AREA (invisible on screen, visible on print) ══ -->
+  <!-- ══ LIGHTBOX ══ -->
+  <div class="lightbox" id="lightbox" onclick="lbClickOutside(event)">
+    <div class="lb-img-wrap" id="lb-img-wrap"></div>
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-arrow prev" id="lb-prev" onclick="lbNav(-1)">‹</button>
+    <button class="lb-arrow next" id="lb-next" onclick="lbNav(1)">›</button>
+    <div class="lb-dots" id="lb-dots"></div>
+  </div>
+
+  <!-- ══ PRINT AREA ══ -->
   <div id="print-area"></div>
 
   <!-- ══ TOAST ══ -->
   <div class="toast" id="toast"></div>
 
-  <script src="app.js?v=1"></script>
+  <script src="app.js"></script>
 </body>
 </html>
