@@ -1,5 +1,5 @@
 id,nome,descricao,preco,preco_minimo,preco_novo,vendedor,emoji,status,caracteristicas,fotos
-1,Fruteira,Sem as Frutas 😜,80,0,220,Cida,🍎,disponivel,3 prateleiras,./photos/fruteira_1.jpeg
+1,Fruteira,Sem as Frutas 😜,80,55,220,Cida,🍎,disponivel,3 prateleiras,./photos/fruteira_1.jpeg
 2,Mesa + 4 Cadeiras,,400,340,560,Cida,🪑,disponivel,,
 3,Microondas,,740,700,1234,Cida,♨️,disponivel,31 Litros|Interior de Inox,./photos/microondas_1.jpeg|./photos/microondas_2.jpeg
 4,Tanquinho,Colormaq,330,300,550,Cida,🧼,disponivel,220V|16 kg,
