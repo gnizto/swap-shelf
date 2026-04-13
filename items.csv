@@ -4,11 +4,11 @@ id,nome,descricao,preco,preco_minimo,preco_novo,vendedor,emoji,status,caracteris
 3,Microondas,,740,700,1234,Cida,♨️,disponivel,31 Litros|Interior de Inox,./photos/microondas_1.jpeg|./photos/microondas_2.jpeg
 4,Tanquinho,Colormaq,330,300,550,Cida,🧼,disponivel,220V|16 kg,
 5,Geladeira,Electrolux,600,550,10,Cida,🧊,disponivel,127V|430L|Frost Free,./photos/geladeira_1.jpeg
-6,Air-Fryer,Marca: Mondial | Modelo: Grand Family Inox,200,100,477,Cida,🍟,disponivel,"127V|5,5L",./photos/airfryer_1.jpeg|./photos/airfryer_2.jpeg
+6,Air-Fryer,Marca: Mondial | Modelo: Grand Family Inox,200,100,477,Cida,🍟,disponivel,127V|5,5L,./photos/airfryer_1.jpeg|./photos/airfryer_2.jpeg
 8,Fogão 6 Bocas,Marca: Brastemp | Modelo: Quality,450,400,900,Cida,🔥,disponivel,127V|6 Bocas,./photos/fogao_1.jpeg|./photos/fogao_2.jpeg
 9,3 Cadeira de Praia,3 Unidades,120,120,270,Cida,⛱️,disponivel,,
-10,Colchão Casal + Box Bipartido,,750,500,1016,Cida,🛏️,disponivel,,
-11,Colchão Solterio + Base box + Cabeceira,,700,600,1160,Cida,🛏️,disponivel,,
+10,Colchão Casal + Box Bipartido,,700,600,1016,Cida,🛏️,disponivel,,
+11,Colchão Solterio + Base box + Cabeceira,,600,500,1160,Cida,🛏️,disponivel,,
 12,Paneleiro + Aéro,Marca: Itatiaia | Paneleiro 6 portas e Armário Aéreo 2 portas,500,450,800,Cida,📦,disponivel,,./photos/itatiaia_1.jpeg|./photos/itatiaia_2.jpeg
 13,Máquina de Costura,Marca: Singer | Modelo: 4218 Inspiration,400,350,600,Cida,🪡,disponivel,127V,./photos/maquina_costura_1.jpeg
 14,Impressora HP Series 584,,600,500,900,Cida,🖨️,disponivel,Tank,
